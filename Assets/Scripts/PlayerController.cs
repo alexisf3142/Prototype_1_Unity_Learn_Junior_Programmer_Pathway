@@ -6,18 +6,13 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 20.0f;
-    public float turnSpeed = 45.0f;
-    public float horizontalInput;
-    public float forwardInput;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    [SerializeField] protected float speed = 20.0f;
+    [SerializeField] private float turnSpeed = 45.0f;
+    private float horizontalInput;
+    private float forwardInput;
+    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         forwardInput = Input.GetAxis("Vertical");
